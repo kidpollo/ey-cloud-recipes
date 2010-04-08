@@ -14,9 +14,9 @@ if node[:instance_role] == 'db_master'
   size = `curl -s http://instance-data.ec2.internal/latest/meta-data/instance-type`
   package_tgz = case size
   when /m1.small|c1.medium/ # 32 bit
-    'mongodb-linux-i686-1.2.2.tgz'
+    'mongodb-linux-i686-1.2.4.tgz'
   else # 64 bit
-    'mongodb-linux-x86_64-1.2.2.tgz'
+    'mongodb-linux-x86_64-1.2.4.tgz'
   end
   package_folder = package_tgz.gsub('.tgz', '')
 
