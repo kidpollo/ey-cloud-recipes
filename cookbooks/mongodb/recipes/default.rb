@@ -10,7 +10,8 @@ cron_hour =  if node[:backup_interval].to_s == '24'
 
 # Cookbook Name:: mongodb
 # Recipe:: default
-if node[:instance_role] == 'db_master' 
+if ['db_master', 'solo'].include?(node[:instance_role])
+#if node[:instance_role] == 'db_master' 
   size = `curl -s http://instance-data.ec2.internal/latest/meta-data/instance-type`
   package_tgz = case size
   when /m1.small|c1.medium/ # 32 bit
