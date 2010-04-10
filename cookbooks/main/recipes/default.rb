@@ -30,7 +30,6 @@ require_recipe "mbari-ruby"
 
 #uncomment to run the mongodb recipe
 require_recipe "mongodb"
-#require_recipe "custom_unicorn_conf"
 
 #uncomment to run the sunspot recipe
 # require_recipe "sunspot"
